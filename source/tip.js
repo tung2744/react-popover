@@ -10,10 +10,10 @@ const Tip = props => {
     direction === "up"
       ? `0,${mainLength} ${mainLength},0, ${crossLength},${mainLength}`
       : direction === "down"
-        ? `0,0 ${mainLength},${mainLength}, ${crossLength},0`
-        : direction === "left"
-          ? `${mainLength},0 0,${mainLength}, ${mainLength},${crossLength}`
-          : `0,0 ${mainLength},${mainLength}, 0,${crossLength}`
+      ? `0,0 ${mainLength},${mainLength}, ${crossLength},0`
+      : direction === "left"
+      ? `${mainLength},0 0,${mainLength}, ${mainLength},${crossLength}`
+      : `0,0 ${mainLength},${mainLength}, 0,${crossLength}`
   const svgProps = {
     className: "Popover-tip",
     width: isPortrait ? crossLength : mainLength,
@@ -22,7 +22,10 @@ const Tip = props => {
 
   return (
     <svg {...svgProps}>
-      <polygon className="Popover-tipShape" points={points} />
+      <polygon
+        className={["Popover-tipShape", `Popover-tip-${direction}`].join(" ")}
+        points={points}
+      />
     </svg>
   )
 }
