@@ -299,6 +299,7 @@ class Popover extends React.Component {
     }
 
     this.targetBounds = newTargetBounds
+    if (this.props.onTargetResize) this.props.onTargetResize(newTargetBounds)
     return true
   }
   open() {

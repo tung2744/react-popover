@@ -4,35 +4,43 @@
 // Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
 // TypeScript Version: 2.8
 
-import * as React from 'react';
+import * as React from "react"
 
-export = Popover;
+export = Popover
 
 declare class Popover extends React.Component<Popover.PopoverProps> {}
 
 declare namespace Popover {
-    type PopoverPlace =
-        | 'above'
-        | 'right'
-        | 'below'
-        | 'left'
-        | 'row'
-        | 'column'
-        | 'start'
-        | 'end';
+  type PopoverPlace =
+    | "above"
+    | "right"
+    | "below"
+    | "left"
+    | "row"
+    | "column"
+    | "start"
+    | "end"
 
-    interface PopoverProps {
-        body: React.ReactNode;
-        isOpen?: boolean;
-        preferPlace?: PopoverPlace;
-        place?: PopoverPlace;
-        onOuterAction?: (event: Event) => void;
-        refreshIntervalMs?: number;
-        enterExitTransitionDurationMs?: number;
-        tipSize?: number;
-        className?: string;
-        style?: React.CSSProperties;
-        target?: React.ReactElement;
-        appendTarget?: Element;
-    }
+  interface PopoverProps {
+    body: React.ReactNode
+    isOpen?: boolean
+    preferPlace?: PopoverPlace
+    place?: PopoverPlace
+    onOuterAction?: (event: Event) => void
+    refreshIntervalMs?: number
+    enterExitTransitionDurationMs?: number
+    tipSize?: number
+    className?: string
+    style?: React.CSSProperties
+    target?: React.ReactElement
+    appendTarget?: Element
+    onTargetResize?: (bounds: {
+      x: number
+      y: number
+      x2: number
+      y2: number
+      w: number
+      h: number
+    }) => void
+  }
 }
